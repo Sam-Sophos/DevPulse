@@ -1,14 +1,29 @@
-# DevPulse
+# DevPulse 🚀
 
-DevPulse helps developers understand *how* they code — not just *what* they code.
+DevPulse is a developer-focused platform designed to help programmers track learning progress, showcase daily work, and build consistent coding habits.
 
-The goal is to track coding sessions, analyze focus patterns, and provide insights
-that help developers improve consistency and productivity.
+## 🎯 Vision
+- Encourage daily coding consistency
+- Track personal growth over time
+- Showcase meaningful development work
 
-## Tech Stack
-- React + TypeScript
-- Vite
-- Tailwind CSS
+## 🛠 Tech Stack
+- Frontend: Next.js + TypeScript
+- Styling: Tailwind CSS
+- Backend (planned): Node.js/Express or Flask or Go
+- Database (planned): PostgreSQL
 
-## Status
-🚧 In active development
+## 📌 Planned Features
+- Daily activity tracking
+- Developer profiles
+- Contribution timeline
+- Project showcase
+- Authentication & roles
+
+## 🚧 Status
+Early development – foundation phase.
+
+---
+
+Built with consistency in mind 💚
+

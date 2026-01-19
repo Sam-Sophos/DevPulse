@@ -8,9 +8,9 @@ DevPulse is a developer-focused platform designed to help programmers track lear
 - Showcase meaningful development work
 
 ## 🛠 Tech Stack
-- Frontend: Next.js + TypeScript
+- Frontend: Next.js (planned)
 - Styling: Tailwind CSS
-- Backend (planned): Node.js/Express or Flask or Go
+- Backend (planned): Node.js / Express or Flask or Go
 - Database (planned): PostgreSQL
 
 ## 📌 Planned Features
@@ -23,7 +23,4 @@ DevPulse is a developer-focused platform designed to help programmers track lear
 ## 🚧 Status
 Early development – foundation phase.
 
----
-
 Built with consistency in mind 💚
-

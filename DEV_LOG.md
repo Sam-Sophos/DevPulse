@@ -1,6 +1,4 @@
-#### January 18, 2026
-- Created movie routes with CRUD operations
-- Added authentication routes (register, login, me, logout)
-- Set up protected routes requiring JWT tokens
-- Added admin-only permissions for movie creation/updates
-
+## Jan 19, 2026
+- Decided to migrate frontend to Next.js for better routing, SSR, and scalability
+- Backend stack to be finalized (Node/Express, Flask, or Go)
+- Preparing repository structure for Next.js app

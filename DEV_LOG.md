@@ -7,3 +7,8 @@
 - Scaffolded Next.js frontend using App Router
 - Enabled TypeScript, Tailwind CSS, and ESLint
 - Established foundation for DevPulse frontend development
+
+## Jan 21, 2026
+- Added global layout with navigation
+- Created initial homepage content
+- Established reusable component structure

@@ -1,21 +1,25 @@
-import "./globals.css";
-import Navbar from "../components/Navbar";
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import './globals.css';
+import Navbar from '@/components/Navbar';
 
-export const metadata = {
-  title: "DevPulse",
-  description: "Track developer activity and growth",
+const inter = Inter({ subsets: ['latin'] });
+
+export const metadata: Metadata = {
+  title: 'DevPulse - Developer Productivity Platform',
+  description: 'Track coding sessions, focus time, and daily logs. Gain insights into your developer journey.',
 };
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
     <html lang="en">
-      <body>
+      <body className={inter.className}>
         <Navbar />
-        <main style={{ padding: "1.5rem" }}>{children}</main>
+        {children}
       </body>
     </html>
   );

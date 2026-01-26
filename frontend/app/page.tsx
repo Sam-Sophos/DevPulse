@@ -1,3 +1,5 @@
+import HealthStatus from '@/components/HealthStatus';
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white p-8">
@@ -43,6 +45,11 @@ export default function Home() {
               Save Log
             </button>
           </div>
+        </div>
+
+        <div className="bg-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700">
+          <h2 className="text-2xl font-semibold mb-6 text-white">System Status</h2>
+          <HealthStatus />
         </div>
 
         <footer className="mt-12 pt-8 border-t border-gray-800 text-center text-gray-400">

@@ -1,15 +1,17 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import SessionTimerSkeleton from './loading/SessionTimerSkeleton';
 
 interface SessionTimerProps {
   onStartSession: () => Promise<void>;
   onEndSession: (duration: number) => Promise<void>;
   isActive: boolean;
+  isLoading?: boolean;
 }
 
-export default function SessionTimer({ onStartSession, onEndSession, isActive }: SessionTimerProps) {
-  const [time, setTime] = useState(0); // in seconds
+export default function SessionTimer({ onStartSession, onEndSession, isActive, isLoading }: SessionTimerProps) {
+  const [time, setTime] = useState(0);
   const [project, setProject] = useState('DevPulse Development');
   const [tags, setTags] = useState(['coding', 'portfolio']);
 
@@ -54,8 +56,12 @@ export default function SessionTimer({ onStartSession, onEndSession, isActive }:
     }
   };
 
+  if (isLoading) {
+    return <SessionTimerSkeleton />;
+  }
+
   return (
-    <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700">
+    <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover-lift">
       <h2 className="text-2xl font-semibold mb-4 text-cyan-300">Focus Session</h2>
       
       <div className="space-y-6">
@@ -78,8 +84,9 @@ export default function SessionTimer({ onStartSession, onEndSession, isActive }:
             type="text"
             value={project}
             onChange={(e) => setProject(e.target.value)}
-            className="w-full bg-gray-900/70 border border-gray-600 rounded-lg px-4 py-2 text-gray-200 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+            className="w-full bg-gray-900/70 border border-gray-600 rounded-lg px-4 py-3 text-gray-200 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
             placeholder="What are you working on?"
+            disabled={isActive}
           />
         </div>
 
@@ -92,8 +99,9 @@ export default function SessionTimer({ onStartSession, onEndSession, isActive }:
             type="text"
             value={tags.join(', ')}
             onChange={(e) => setTags(e.target.value.split(',').map(tag => tag.trim()).filter(Boolean))}
-            className="w-full bg-gray-900/70 border border-gray-600 rounded-lg px-4 py-2 text-gray-200 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+            className="w-full bg-gray-900/70 border border-gray-600 rounded-lg px-4 py-3 text-gray-200 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
             placeholder="coding, portfolio, nextjs"
+            disabled={isActive}
           />
         </div>
 
@@ -102,7 +110,8 @@ export default function SessionTimer({ onStartSession, onEndSession, isActive }:
           {!isActive ? (
             <button
               onClick={handleStart}
-              className="flex-1 py-3 bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-700 hover:to-green-700 rounded-lg font-medium transition-all duration-300 flex items-center justify-center"
+              disabled={isLoading}
+              className="flex-1 py-3 bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-700 hover:to-green-700 disabled:opacity-50 disabled:cursor-not-allowed rounded-lg font-medium transition-all duration-300 flex items-center justify-center"
             >
               <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
@@ -113,7 +122,8 @@ export default function SessionTimer({ onStartSession, onEndSession, isActive }:
           ) : (
             <button
               onClick={handleStop}
-              className="flex-1 py-3 bg-gradient-to-r from-rose-600 to-pink-600 hover:from-rose-700 hover:to-pink-700 rounded-lg font-medium transition-all duration-300 flex items-center justify-center"
+              disabled={isLoading}
+              className="flex-1 py-3 bg-gradient-to-r from-rose-600 to-pink-600 hover:from-rose-700 hover:to-pink-700 disabled:opacity-50 disabled:cursor-not-allowed rounded-lg font-medium transition-all duration-300 flex items-center justify-center"
             >
               <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />

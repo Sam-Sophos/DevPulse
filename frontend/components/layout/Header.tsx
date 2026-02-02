@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,25 +13,27 @@ export default function Header() {
           {/* Logo */}
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              <h1 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                DevPulse
-              </h1>
+              <Link href="/">
+                <h1 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                  DevPulse
+                </h1>
+              </Link>
             </div>
             
             {/* Desktop Navigation */}
             <nav className="hidden md:ml-10 md:flex md:space-x-8">
-              <a href="#" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
                 Dashboard
-              </a>
+              </Link>
               <a href="#" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
                 Sessions
               </a>
               <a href="#" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
                 Statistics
               </a>
-              <a href="#" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                Data
-              </a>
+              <Link href="/settings" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                Settings
+              </Link>
             </nav>
           </div>
 
@@ -71,18 +74,18 @@ export default function Header() {
       {isMenuOpen && (
         <div className="md:hidden border-t border-gray-800">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a href="#" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+            <Link href="/" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
               Dashboard
-            </a>
+            </Link>
             <a href="#" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
               Sessions
             </a>
             <a href="#" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
               Statistics
             </a>
-            <a href="#" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-              Data
-            </a>
+            <Link href="/settings" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+              Settings
+            </Link>
             <div className="pt-4 pb-3 border-t border-gray-800">
               <div className="flex items-center px-5">
                 <div className="flex-shrink-0">

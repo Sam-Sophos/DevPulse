@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/layout/Header';
+import ToastProvider from '@/components/notifications/ToastProvider';
+import KeyboardShortcuts from '@/components/shortcuts/KeyboardShortcuts';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -19,6 +21,8 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className={`${inter.className} antialiased`}>
+        <ToastProvider />
+        <KeyboardShortcuts />
         <Header />
         {children}
       </body>

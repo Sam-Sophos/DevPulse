@@ -7,6 +7,7 @@ import DevLogForm from '@/components/DevLogForm';
 import StatisticsDashboard from '@/components/StatisticsDashboard';
 import DataManager from '@/components/DataManager';
 import Achievements from '@/components/achievements/Achievements';
+import PomodoroTimer from '@/components/timer/PomodoroTimer';
 import { ErrorBoundary } from '@/components/error/ErrorBoundary';
 import { useNotifications } from '@/hooks/useNotifications';
 
@@ -40,7 +41,7 @@ export default function Home() {
     averageSessionLength: 0
   });
   const [isLoading, setIsLoading] = useState(false);
-  const [activeView, setActiveView] = useState<'dashboard' | 'data' | 'achievements'>('dashboard');
+  const [activeView, setActiveView] = useState<'dashboard' | 'data' | 'achievements' | 'pomodoro'>('dashboard');
   const { showSuccess, showError, showLoading, dismiss } = useNotifications();
 
   const fetchTodaySessions = async () => {
@@ -187,10 +188,10 @@ export default function Home() {
             </div>
 
             {/* View Toggle */}
-            <div className="flex space-x-4 mb-6">
+            <div className="flex flex-wrap gap-3 mb-6">
               <button
                 onClick={() => setActiveView('dashboard')}
-                className={`px-6 py-3 rounded-xl font-medium transition-all ${
+                className={`px-5 py-2.5 rounded-xl font-medium transition-all ${
                   activeView === 'dashboard'
                     ? 'bg-gradient-to-r from-cyan-600 to-blue-600 text-white'
                     : 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/50'
@@ -199,8 +200,18 @@ export default function Home() {
                 Dashboard
               </button>
               <button
+                onClick={() => setActiveView('pomodoro')}
+                className={`px-5 py-2.5 rounded-xl font-medium transition-all ${
+                  activeView === 'pomodoro'
+                    ? 'bg-gradient-to-r from-cyan-600 to-blue-600 text-white'
+                    : 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/50'
+                }`}
+              >
+                Pomodoro
+              </button>
+              <button
                 onClick={() => setActiveView('data')}
-                className={`px-6 py-3 rounded-xl font-medium transition-all ${
+                className={`px-5 py-2.5 rounded-xl font-medium transition-all ${
                   activeView === 'data'
                     ? 'bg-gradient-to-r from-cyan-600 to-blue-600 text-white'
                     : 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/50'
@@ -210,7 +221,7 @@ export default function Home() {
               </button>
               <button
                 onClick={() => setActiveView('achievements')}
-                className={`px-6 py-3 rounded-xl font-medium transition-all ${
+                className={`px-5 py-2.5 rounded-xl font-medium transition-all ${
                   activeView === 'achievements'
                     ? 'bg-gradient-to-r from-cyan-600 to-blue-600 text-white'
                     : 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/50'
@@ -282,6 +293,12 @@ export default function Home() {
             </div>
           )}
 
+          {activeView === 'pomodoro' && (
+            <div className="mb-8">
+              <PomodoroTimer />
+            </div>
+          )}
+
           {activeView === 'data' && (
             <div className="mb-8">
               <DataManager />
@@ -295,8 +312,8 @@ export default function Home() {
           )}
 
           <footer className="pt-8 border-t border-gray-800 text-center text-gray-400">
-            <p>DevPulse v2.1.0 • Building in public • One commit per day</p>
-            <p className="text-sm mt-2">Settings, Shortcuts & Achievements • Feb 2, 2026</p>
+            <p>DevPulse v2.2.0 • Building in public • One commit per day</p>
+            <p className="text-sm mt-2">Pomodoro Timer Integration • Feb 3, 2026</p>
           </footer>
         </div>
       </main>

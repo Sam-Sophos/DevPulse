@@ -2,3 +2,5 @@ node_modules/
 .next/
 dist/
 .env
+*.db
+devpulse.db

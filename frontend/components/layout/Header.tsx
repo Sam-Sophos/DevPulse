@@ -25,12 +25,9 @@ export default function Header() {
               <Link href="/" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
                 Dashboard
               </Link>
-              <a href="#" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                Sessions
-              </a>
-              <a href="#" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                Statistics
-              </a>
+              <Link href="/reports" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                Analytics
+              </Link>
               <Link href="/settings" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
                 Settings
               </Link>
@@ -77,12 +74,9 @@ export default function Header() {
             <Link href="/" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
               Dashboard
             </Link>
-            <a href="#" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-              Sessions
-            </a>
-            <a href="#" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-              Statistics
-            </a>
+            <Link href="/reports" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+              Analytics
+            </Link>
             <Link href="/settings" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
               Settings
             </Link>

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import SessionTimerSkeleton from './loading/SessionTimerSkeleton';
+import Tooltip from '../app/components/ui/Tooltip';
 
 interface SessionTimerProps {
   onStartSession: () => Promise<void>;
@@ -62,7 +63,12 @@ export default function SessionTimer({ onStartSession, onEndSession, isActive, i
 
   return (
     <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover-lift">
-      <h2 className="text-2xl font-semibold mb-4 text-cyan-300">Focus Session</h2>
+      <div className="flex items-center justify-between mb-4">
+        <h2 className="text-2xl font-semibold text-cyan-300">Focus Session</h2>
+        <Tooltip content="Track your focused coding sessions. Set project and tags for better organization.">
+          <span className="text-gray-400 cursor-help">ℹ️</span>
+        </Tooltip>
+      </div>
       
       <div className="space-y-6">
         {/* Timer Display */}

@@ -10,6 +10,7 @@ import Achievements from '@/components/achievements/Achievements';
 import PomodoroTimer from '@/components/timer/PomodoroTimer';
 import SessionCalendar from '@/components/calendar/SessionCalendar';
 import QuickActions from '@/components/quick-actions/QuickActions';
+import DailyGoals from '@/components/goals/DailyGoals';
 import { ErrorBoundary } from '@/components/error/ErrorBoundary';
 import { useNotifications } from '@/hooks/useNotifications';
 
@@ -162,6 +163,9 @@ export default function Home() {
 
               {/* Right Column */}
               <div className="space-y-8">
+                {/* Daily Goals */}
+                <DailyGoals />
+
                 {/* Dev Log Form */}
                 <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover-lift">
                   <h2 className="text-2xl font-semibold mb-6 text-green-300">Daily Reflection</h2>
@@ -205,8 +209,8 @@ export default function Home() {
           )}
 
           <footer className="pt-8 border-t border-gray-800 text-center text-gray-400">
-            <p>DevPulse v2.4.0 • Building in public • One commit per day</p>
-            <p className="text-sm mt-2">Quick Actions & Dashboard Improvements • Feb 5, 2026</p>
+            <p>DevPulse v2.5.0 • Building in public • One commit per day</p>
+            <p className="text-sm mt-2">Daily Goals & Productivity Features • Feb 5, 2026</p>
           </footer>
         </div>
       </main>

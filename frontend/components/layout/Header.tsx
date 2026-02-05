@@ -2,12 +2,13 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import FocusMode from '@/components/focus/FocusMode';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-gray-900/95 backdrop-blur-sm border-b border-gray-800">
+    <header className="sticky top-0 z-50 bg-gray-900/95 backdrop-blur-sm border-b border-gray-800 focus-mode-essential">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -34,8 +35,10 @@ export default function Header() {
             </nav>
           </div>
 
-          {/* User menu & mobile button */}
-          <div className="flex items-center">
+          {/* Right side controls */}
+          <div className="flex items-center space-x-4">
+            <FocusMode />
+            
             {/* Desktop user info */}
             <div className="hidden md:flex items-center space-x-4">
               <div className="text-sm text-gray-400">

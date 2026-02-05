@@ -89,3 +89,26 @@ body {
   transform: translateY(-2px);
   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
 }
+
+/* Focus Mode Styles */
+.focus-mode {
+  --background-start-rgb: 0, 0, 0 !important;
+  --background-end-rgb: 0, 0, 0 !important;
+}
+
+.focus-mode body {
+  background: black !important;
+}
+
+.focus-mode .focus-mode-hidden {
+  opacity: 0.2;
+  transition: opacity 0.3s ease;
+}
+
+.focus-mode .focus-mode-hidden:hover {
+  opacity: 0.5;
+}
+
+.focus-mode .focus-mode-essential {
+  opacity: 1 !important;
+}

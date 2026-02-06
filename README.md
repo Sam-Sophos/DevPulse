@@ -1,24 +1,20 @@
-# DevPulse
+<div align="center">
+<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+</div>
 
-Developer productivity and reflection platform.
+# Run and deploy your AI Studio app
 
-## Structure
-- `/frontend` - Next.js app
-- `/backend` - Express API
+This contains everything you need to run your app locally.
 
-## Database
-- **Development**: SQLite (no installation required)
-- **Production**: PostgreSQL (planned migration)
-- **Schema**: Users, Sessions, Dev Logs, Daily Stats
+View your app in AI Studio: https://ai.studio/apps/temp/1
 
-## API v1.2.0 Features
-- Session tracking with start/end functionality
-- Dev logs with mood tracking
-- Daily statistics aggregation
-- SQLite database with automatic initialization
-- Health check with database status
+## Run Locally
 
-## Quick Test
-1. Start backend: `cd backend && npm run dev`
-2. Test API: `curl http://localhost:3001/api/health`
-3. Insert sample data: `curl -X POST http://localhost:3001/api/sample-data`
+**Prerequisites:**  Node.js
+
+
+1. Install dependencies:
+   `npm install`
+2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
+3. Run the app:
+   `npm run dev`

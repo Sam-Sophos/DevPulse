@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DevPulse - Developer Growth Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              background: '#09090b',
+              foreground: '#fafafa',
+              card: '#18181b',
+              'card-foreground': '#fafafa',
+              popover: '#18181b',
+              'popover-foreground': '#fafafa',
+              primary: '#3b82f6',
+              'primary-foreground': '#ffffff',
+              muted: '#27272a',
+              'muted-foreground': '#a1a1aa',
+              accent: '#27272a',
+              'accent-foreground': '#fafafa',
+              destructive: '#ef4444',
+              'destructive-foreground': '#fafafa',
+              border: '#27272a',
+              input: '#27272a',
+              ring: '#3b82f6',
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      body {
+        background-color: #09090b;
+        color: #fafafa;
+        font-family: 'Inter', sans-serif;
+      }
+      /* Custom scrollbar for webkit */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #18181b; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #3f3f46; 
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #52525b; 
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-markdown": "https://esm.sh/react-markdown@^10.1.0",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "@google/genai": "https://esm.sh/@google/genai@^1.38.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "recharts": "https://esm.sh/recharts@^3.7.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
